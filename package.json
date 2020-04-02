@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "jest": "^25.2.4",
+    "playwright": "^0.12.1",
+    "qawolf": "^0.12.4"
+  },
+  "devDependencies": {
+    "jest-playwright-preset": "^0.1.1"
+  },
+  "jest": {
+    "preset": "jest-playwright-preset"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "name": "wolf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/fet202/fet202-gmail.com.git",
+  "author": "say10 <fet202@gmail.com>",
+  "license": "MIT"
+}

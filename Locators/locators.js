@@ -1,0 +1,27 @@
+const locators = {
+    search_field: "#search-query",
+    marker: ".leaflet-marker-icon tmap__him-pin leaflet-zoom-animated leaflet-interactive",
+    first_search_result: "#search-result-0",
+    clear_button: '#app > div > section > div.tmap__absolute > section > div > button',
+    clear_button_2: '#app > div > section > div.tmap__absolute > section > div > button',
+    broadcast_tower_point: '#map > div.leaflet-pane.leaflet-map-pane > div.leaflet-pane.leaflet-marker-pane > div:nth-child(18)',
+    filled_search_field: '.tmap__panel #search-query',
+    search_result_0: '#search-result-0',
+    first_checkbox: '#app > section > div.tmap__panel.tmap__panel-right > div > div.tmap__panel-child-body > div > div > div:nth-child(2) > div > div > ul > li:nth-child(1) > label > input[type:checkbox]',
+    second_checkbox: '#app > section > div.tmap__panel.tmap__panel-right > div > div.tmap__panel-child-body > div > div > div:nth-child(2) > div > div > ul > li:nth-child(2) > label > input[type:checkbox]',
+    third_checkbox: '#app > section > div.tmap__panel.tmap__panel-right > div > div.tmap__panel-child-body > div > div > div:nth-child(2) > div > div > ul > li:nth-child(3) > label > input[type:checkbox]',
+    fourth_checkbox: '#app > section > div.tmap__panel.tmap__panel-right > div > div.tmap__panel-child-body > div > div > div:nth-child(2) > div > div > ul > li:nth-child(4) > label > input[type:checkbox]',
+    right_panel_text_field: '#app > section > div.tmap__panel.tmap__panel-right > div > div.tmap__panel-child-body > div > div > div.accordion__title.Text-Standart-text-Bold > div.accordion__title-text',
+    second_checkbox_inter: '#app > section > div.tmap__panel.tmap__panel-right > div > div.tmap__panel-child-body > div > div > div:nth-child(2) > div > div > ul > li:nth-child(2) > label > span',
+    first_checkbox_inter: '#app > section > div.tmap__panel.tmap__panel-right > div > div.tmap__panel-child-body > div > div > div:nth-child(2) > div > div > ul > li:nth-child(1) > label > span',
+    third_checkbox_inter: '#app > section > div.tmap__panel.tmap__panel-right > div > div.tmap__panel-child-body > div > div > div:nth-child(2) > div > div > ul > li:nth-child(3) > label > span',
+    fourth_checkbox_inter: '#app > section > div.tmap__panel.tmap__panel-right > div > div.tmap__panel-child-body > div > div > div:nth-child(2) > div > div > ul > li:nth-child(4) > label > span',
+    baseLayersButton: '#base-map-button',
+    baseLayersDM: '#base-map-list-0',
+    baseLayersOSM: '#base-map-list-1',
+    baseLayersTop: '#base-map-list-2',
+    baseLayersSat: '#base-map-list-1',
+    mobile_carousel: 'tmap__carousel',
+};
+module.exports = locators;
+
