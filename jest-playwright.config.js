@@ -1,6 +1,6 @@
 module.exports = {launchBrowserApp: {
-    headless: true,
-        slowMo: 10,
+    headless: false,
+        slowMo: 100,
         devtools: false
  }
 };
