@@ -67,34 +67,174 @@ describe('Portal Coverage_checker tests', () => {
 
     //todo добавить кейсы без кода
 
-    test('close', async ()=>{
+    test('navigation by narrows working circled', async ()=>{
+        // пройти через 5 к перовому варианту
+
+
+
+    });
+
+    test('choose fifth autocomplete options', async ()=>{
 
 
 
 
     });
 
-    test('close', async ()=>{
+    test('not valid insert', async ()=>{
+
+
+
+
+    });
+    test('max limit for input', async ()=>{
 
 
 
 
     });
 
-    test('close', async ()=>{
-
-
-
-
-    });
-    test('close', async ()=>{
+    test('navigation via enter', async ()=>{
 
 
 
 
     });
 
-    test('close', async ()=>{
+    test('gps button works', async ()=>{
+
+
+
+
+    });
+
+    test('layer controller opens Mobile', async ()=>{
+
+
+
+
+    });
+
+    test('layer controller opens Fixed line', async ()=>{
+
+
+
+
+    });
+
+    test('checkboxes turn on/off Mobil', async ()=>{
+
+
+
+
+    });
+
+    test('heckboxes turn on/off Fixed line', async ()=>{
+
+
+
+
+    });
+
+    test('zoom in/ zoom out button clickable', async ()=>{
+
+
+
+
+    });
+
+    test('base layer, print, faq buttons present', async ()=>{
+
+
+
+
+    });
+
+    test('base layers switches to OSM ', async ()=>{
+
+
+
+
+    });
+
+    test('base layers switches to Topographic ', async ()=>{
+
+
+
+
+    });
+
+    test('base layers switches to Satelite ', async ()=>{
+
+
+
+
+    });
+
+    test('base layers switches to Deutchekarte ', async ()=>{
+
+
+
+
+    });
+    test('links in faq lead to correct pages', async ()=>{
+
+
+
+
+
+
+    });
+
+    test('faq text correct', async ()=>{
+
+
+
+
+    });
+
+    test('faq closes', async ()=>{
+
+
+
+    });
+
+    test('', async ()=>{
+
+
+
+
+    });
+
+    test('', async ()=>{
+
+
+
+
+    });
+
+    test('', async ()=>{
+
+
+
+
+    });
+
+    test('', async ()=>{
+
+
+
+
+    });
+
+    test('', async ()=>{
+
+
+
+
+    });
+
+    test('', async ()=>{
 
 
 
