@@ -1,6 +1,6 @@
 const locator = require ('../Locators/locators.js');
 const helpers = require('../Helpers/helpers');
-const timeout = process.env.SLOWMO ? 300 : 250;
+//const timeout = process.env.SLOWMO ? 300 : 250;
 
 
 
@@ -41,7 +41,7 @@ describe('Portal Coverage_checker tests', () => {
         const elementHandle = await page.$(locator.search_field);
         const input_field_handle = await elementHandle.getProperty('value');
         const input_result = await input_field_handle.jsonValue();
-        expect(input_result).toBe('53111 Bonn, Bonngasse 11, Nordrhein-Westfalen')
+        expect(input_result).toBe('53111 Bonn, Bonngasse 11, Nordrhein-Westfalen');
         await helpers.clearInputField()
 
     });
@@ -64,6 +64,43 @@ describe('Portal Coverage_checker tests', () => {
         expect(input_result).toBe('')
 
     });
+
+    //todo добавить кейсы без кода
+
+    test('close', async ()=>{
+
+
+
+
+    });
+
+    test('close', async ()=>{
+
+
+
+
+    });
+
+    test('close', async ()=>{
+
+
+
+
+    });
+    test('close', async ()=>{
+
+
+
+
+    });
+
+    test('close', async ()=>{
+
+
+
+
+    });
+
 
     test('close session', async ()=>{
         await browser.close();
