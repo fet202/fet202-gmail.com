@@ -38,6 +38,13 @@ const locator = require ('../Locators/locators.js');
         await page.click(locator.clear_button)
     };
 
+    let GetInputResult  = async function GetInputResult(){
+        const elementHandle = await page.$(locator.search_field);
+        const input_field_handle = await elementHandle.getProperty('value');
+        const input_result = await input_field_handle.jsonValue();
+        return  input_result
+    };
+
 
 module.exports = {
     City_search ,
@@ -45,7 +52,8 @@ module.exports = {
     delay : delay,
     checkboxCheck : checkboxCheks,
     checkboxCheck_negative : checkboxCheks_negative,
-    clearInputField : clearInputField
+    clearInputField : clearInputField,
+    GetInputResult : GetInputResult
     // clickMiddleMap : clickMiddleMap,
     // openLayersControllerMobile :openLayersControllerMobile ,
     // closeLayersControllerMobile : closeLayersControllerMobile,

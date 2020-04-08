@@ -38,9 +38,8 @@ describe('Portal Coverage_checker tests', () => {
     });
     test('autocomplete value in the input field', async () => {
         await helpers.City_search('Bonn');
-        const elementHandle = await page.$(locator.search_field);
-        const input_field_handle = await elementHandle.getProperty('value');
-        const input_result = await input_field_handle.jsonValue();
+        let GetInputResult =  helpers.GetInputResult;
+        const input_result = await GetInputResult();
         expect(input_result).toBe('53111 Bonn, Bonngasse 11, Nordrhein-Westfalen');
         await helpers.clearInputField()
 
@@ -58,9 +57,8 @@ describe('Portal Coverage_checker tests', () => {
         await page.click(locator.clear_button);
         await  console.log('4');
 
-        const elementHandle = await page.$(locator.search_field);
-        const input_field_handle = await elementHandle.getProperty('value');
-        const input_result = await input_field_handle.jsonValue();
+        let GetInputResult =  helpers.GetInputResult;
+        const input_result = await GetInputResult();
         expect(input_result).toBe('')
 
     });
@@ -69,19 +67,40 @@ describe('Portal Coverage_checker tests', () => {
 
     test('navigation by narrows working circled', async ()=>{
         // пройти через 5 к перовому варианту
+        await page.waitForSelector(locator.search_field);
+        await page.click(locator.search_field);
+        await page.type(locator.search_field, 'minet');
+        await page.waitForSelector(locator.first_search_result, {waitUntil: 'networkidle0'});
+        for(let i = 0; i < 6; i++) {
+
+            await page.keyboard.press('ArrowDown');
+        }
+        await page.keyboard.press('Enter');
+        let GetInputResult =  helpers.GetInputResult;
+        const input_result = await GetInputResult();
+        expect(input_result).toBe('61137 Schöneck, Minetsgasse 6, Hessen')
+
+
+
+
+
+
 
 
 
     });
 
-    test('choose fifth autocomplete options', async ()=>{
-
-
-
-
-    });
-
+    // todo написать функцию getAttributeResult (selector, property)
     test('not valid insert', async ()=>{
+
+        await helpers.City_search('@@@@@')
+        await page.waitForSelector('#app > div > section > div.tmap__panel.tmap__panel-left > div.tmap__sidebar > div.tmap__base-header.location-info > div.tmap__base-header-headline.Headline-Standart-text-Bold')
+
+        const elementHandle1 = await page.$('#app > div > section > div.tmap__panel.tmap__panel-left > div.tmap__sidebar > div.tmap__base-header.location-info > div.tmap__base-header-headline.Headline-Standart-text-Bold');
+        const input_field_handle1 = await elementHandle1.getProperty('innerText');
+        const slec = await input_field_handle1.jsonValue();
+        await console.log(slec)
+
 
 
 
