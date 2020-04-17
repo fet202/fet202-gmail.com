@@ -8,14 +8,14 @@ const locator = require ('../Locators/locators.js');
     };
 
 
-    let checkboxCheks = async function checkboxCheks(selector) {
+    let checkboxCheck = async function checkboxCheck(selector) {
         checkboxStatus = await page.$eval(selector, input => {
             return input.checked
         }, timeout);
         expect(checkboxStatus).toBe(true)
     };
 
-   let checkboxCheks_negative =  async function checkboxCheks_negative(selector) {
+   let checkboxCheck_negative =  async function checkboxCheks_negative(selector) {
         checkboxStatus = await page.$eval(selector, input => {
             return input.checked
         }, timeout);
@@ -41,19 +41,28 @@ const locator = require ('../Locators/locators.js');
     let GetInputResult  = async function GetInputResult(){
         const elementHandle = await page.$(locator.search_field);
         const input_field_handle = await elementHandle.getProperty('value');
-        const input_result = await input_field_handle.jsonValue();
-        return  input_result
+        return  await input_field_handle.jsonValue()
+    };
+
+    let getAttributeText = async function getAttributeText (sel, propic){
+        const elementHandle1 = await page.$(sel);
+        const sel_handle = await  elementHandle1.getProperty(propic);
+        return await sel_handle.jsonValue();
+        console.log(sel_handle.jsonValue())
+
     };
 
 
 module.exports = {
     City_search ,
-    bla : bla,
-    delay : delay,
-    checkboxCheck : checkboxCheks,
-    checkboxCheck_negative : checkboxCheks_negative,
-    clearInputField : clearInputField,
-    GetInputResult : GetInputResult
+    bla ,
+    delay ,
+    checkboxCheck ,
+    checkboxCheck_negative ,
+    clearInputField ,
+    GetInputResult ,
+    getAttributeText
+
     // clickMiddleMap : clickMiddleMap,
     // openLayersControllerMobile :openLayersControllerMobile ,
     // closeLayersControllerMobile : closeLayersControllerMobile,

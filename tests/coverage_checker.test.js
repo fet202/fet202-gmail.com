@@ -8,7 +8,6 @@ const helpers = require('../Helpers/helpers');
 
 
 
-
 beforeAll(async () => {
     jest.setTimeout(20000);
     await page.goto(CC_URL, {waitUntil: 'domcontentloaded'});
@@ -17,11 +16,7 @@ beforeAll(async () => {
 
 
 afterEach(async () => {
-    //     try {
-    //         await page.waitForSelector(locator.clear_button);
-    //         await page.click(locator.clear_button)
-    //     } catch (e) {
-    //     }
+
     },);
 
 describe('Portal Coverage_checker tests', () => {
@@ -63,7 +58,7 @@ describe('Portal Coverage_checker tests', () => {
 
     });
 
-    //todo добавить кейсы без кода
+    //todo добавить списаок всех селекторов включая мобильную весрию
 
     test('navigation by narrows working circled', async ()=>{
         // пройти через 5 к перовому варианту
@@ -94,12 +89,22 @@ describe('Portal Coverage_checker tests', () => {
     test('not valid insert', async ()=>{
 
         await helpers.City_search('@@@@@')
-        await page.waitForSelector('#app > div > section > div.tmap__panel.tmap__panel-left > div.tmap__sidebar > div.tmap__base-header.location-info > div.tmap__base-header-headline.Headline-Standart-text-Bold')
+        await page.waitForSelector(locator.textResult)
 
-        const elementHandle1 = await page.$('#app > div > section > div.tmap__panel.tmap__panel-left > div.tmap__sidebar > div.tmap__base-header.location-info > div.tmap__base-header-headline.Headline-Standart-text-Bold');
-        const input_field_handle1 = await elementHandle1.getProperty('innerText');
-        const slec = await input_field_handle1.jsonValue();
-        await console.log(slec)
+        // const elementHandle1 = await page.$(locator.textResult);
+        // const input_field_handle1 = await elementHandle1.getProperty('innerText');
+        // const slec = await input_field_handle1.jsonValue();
+        // await console.log(slec);
+        // expect(slec).toBe('@@@@@')
+
+        let sel_handle = await helpers.getAttributeText(locator.textResult,'innerText');
+        // let getAttributeText  = helpers.getAttributeText(locator.textResult,'innerText');
+        // const sel_handle = getAttributeText;
+
+        console.log(sel_handle)
+        expect(sel_handle).toBe('@@@@@')
+
+
 
 
 
